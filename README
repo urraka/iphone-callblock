@@ -1,5 +1,4 @@
-Simple application for jailbroken iphones that blocks incoming calls based on a list of regex
-patterns to test against the caller number.
+Simple application for jailbroken iphones that blocks incoming calls based on a list of regex patterns to test against the caller number.
 
 BUILD
 
@@ -9,9 +8,7 @@ Might need to edit the makefile so sysroot matches the iPhone SDK installed.
 
 RUN
 
-Upload bin/callblocker to iPhone along with a file called blocklist, which has a list of regex
-patterns to match against the incoming numbers. The file is loaded from the current working
-directory of the application.
+Upload bin/callblocker to iPhone along with a file called blocklist, which has a list of regex patterns to match against the incoming numbers. The file is loaded from the current working directory of the application.
 
 Example for a blocklist file which blocks all numbers that start with +54341681:
 
@@ -21,5 +18,4 @@ You can run the application on the background using ssh like this:
 
 ./callblocker > out.log 2> error.log < /dev/null &
 
-This is working for me on a jailbroken iPhone with iOS 6.1. It shows the call screen but closes it
-immediately.
+This is working for me on a jailbroken iPhone with iOS 6.1. It shows the call screen but closes it immediately.
