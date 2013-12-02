@@ -115,11 +115,15 @@ void callback(CFNotificationCenterRef center, void *observer, CFStringRef name, 
 		{
 			CTCall *call = (CTCall*)[info objectForKey: @"kCTCall"];
 			NSString *caller = CTCallCopyAddress(NULL, call);
+			
+			if (caller == nil)
+				caller = @"0";
 
 			if (is_blocked(caller))
+			{
 				CTCallDisconnect(call);
-			
-			[caller release];
+				std::cout << "Blocked number " << [caller UTF8String] << std::endl;
+			}
 		}
 	}
 }
